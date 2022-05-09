@@ -40,9 +40,9 @@ log-level=warn
 logger-type=syslog'
 
 sudo mkdir -p /etc/services.d/rstudio
-sudo echo $STR_RUN > /etc/services.d/rstudio/run
-sudo echo $STR_FINISH > /etc/services.d/rstudio/finish
-sudo echo $STR_LOG > /etc/rstudio/logging.conf
+echo $STR_RUN | sudo tee /etc/services.d/rstudio/run
+echo $STR_FINISH | sudo tee /etc/services.d/rstudio/finish
+echo $STR_LOG | sudo tee /etc/rstudio/logging.conf
 
 
 # Install Python
